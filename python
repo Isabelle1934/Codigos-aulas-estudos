@@ -27,3 +27,11 @@ print(s1)
 mensagem = 'Python'
 s1 = mensagem + (8 * '-') + mensagem
 print(s1)
+#---------------------------------
+s1 = 'JS ' + (4 * '-') + ' C++ ' + (4 * '-') + ' Ruby ' + (4 * '-')
+print(s1)
+#---------------------------------
+altura = 1.75
+mensagem = 'Minha altura é %.1f' %(altura)
+print(mensagem)
+#---------------------------------

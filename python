@@ -18,3 +18,12 @@ nota = 8.5
 disciplina = 'Algoritmos'
 s1 = 'Você tirou %d na disciplina de %s' % (nota, disciplina)
 print(s1)
+#---------------------------------
+nome = 'Isa'
+idade = 20
+s1 = f'Meu nome é {nome} e tenho {idade} anos'
+print(s1)
+#---------------------------------
+mensagem = 'Python'
+s1 = mensagem + (8 * '-') + mensagem
+print(s1)

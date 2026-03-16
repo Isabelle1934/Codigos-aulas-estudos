@@ -35,3 +35,7 @@ altura = 1.75
 mensagem = 'Minha altura é %.1f' %(altura)
 print(mensagem)
 #---------------------------------
+pontos = 95.5
+materia = 'Python'
+s1 = 'Pontuação: %d materia: %s' %(pontos, materia)
+print(s1)

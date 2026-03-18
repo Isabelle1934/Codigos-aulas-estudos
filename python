@@ -40,6 +40,7 @@ materia = 'Python'
 s1 = 'Pontuação: %d materia: %s' %(pontos, materia)
 print(s1)
 #---------------------------------
+
 s1 = 'Bem-vindo(a) ao sistema de planos de saúde da Isabelle Silva!' #Aqui é as boas vindas do programa
 print(s1)
 
@@ -65,3 +66,58 @@ else:
 #Abaixo ele vai calcular o valor mensal com base no percentual e depois vai exibir o valor com duas casa decimais (.2f)
 valor_mensal = valor_base * percentual
 print(f'O plano mensal é de: R$ {valor_mensal:.2f}')
+
+#---------------------------------
+
+#Mensagem de boas-vindas + menu
+print('Bem-vinda à Pizzaria da Isabelle Silva!')
+print('----------- CARDÁPIO -----------')
+print('Tamanho P - Pizza Salgada (PS) = R$30 | Pizza Doce (PD) = R$34')
+print('Tamanho M - Pizza Salgada (PS) = R$45 | Pizza Doce (PD) = R$48')
+print('Tamanho G - Pizza Salgada (PS) = R$60 | Pizza Doce (PD) = R$66')
+print('--------------------------------')
+
+#Acumulador do total
+total = 0
+
+#Estrutura de repetição
+while True:
+
+    #Entrada com o sabor da pizza
+    sabor = input("Digite o sabor (PS/PD): ").upper()
+
+    if sabor != "PS" and sabor != "PD":
+        print("Sabor inválido. Tente novamente")
+        continue  #Aqui ele retorna para o início do loop
+
+    #Aqui coloca o tamanho
+    tamanho = input("Digite o tamanho (P/M/G): ").upper()
+
+    if tamanho != "P" and tamanho != "M" and tamanho != "G":
+        print("Tamanho inválido. Tente novamente")
+        continue  #Volta para o início
+    if sabor == "PS":
+        if tamanho == "P":
+            preco = 30
+        elif tamanho == "M":
+            preco = 45
+        elif tamanho == "G":
+            preco = 60
+    elif sabor == "PD":
+        if tamanho == "P":
+            preco = 34
+        elif tamanho == "M":
+            preco = 48
+        elif tamanho == "G":
+            preco = 66
+
+    #Soma no acumulador
+    total += preco
+    print(f"Pedido adicionado: R$ {preco:.2f}")
+    continuar = input("Deseja pedir mais alguma coisa? (S/N): ").upper()
+
+    if continuar == "N":
+        break  #Encerra o loop
+
+#Resultado final
+print(f'Valor total do pedido: R$ {total:.2f}')

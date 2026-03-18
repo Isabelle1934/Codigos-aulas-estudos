@@ -40,28 +40,28 @@ materia = 'Python'
 s1 = 'Pontuação: %d materia: %s' %(pontos, materia)
 print(s1)
 #---------------------------------
-s1 = 'Bem-vindo(a) ao sistema de planos de saúde, Isabelle Silva!'
+s1 = 'Bem-vindo(a) ao sistema de planos de saúde, Isabelle Silva!' #Aqui é as boas vindas do programa
 print(s1)
 
-valor_base = float(input("Digite o valor base do plano: "))
-idade = int(input("Digite a idade do cliente: "))
+valor_base = float(input("Digite o valor base do plano: ")) #Ele solicita o valor base e converte para o número decimal
+idade = int(input("Digite a idade do cliente: ")) #Já aqui solicita a idade do cliente e converte para número inteiro
 
 if idade >= 0 and idade < 19:
-    percentual = 1.0 
+    percentual = 1.0 #aqui dá 100% e por ai vai...
 elif idade >= 19 and idade < 29:
-    percentual = 1.5 
+    percentual = 1.5 #150%
 elif idade >= 29 and idade < 39:
-    percentual = 2.25 
+    percentual = 2.25 #225%
 elif idade >= 39 and idade < 49:
-    percentual = 2.40 
+    percentual = 2.40 #240%
 elif idade >= 49 and idade < 59:
-    percentual = 3.50 
+    percentual = 3.50 #350%
 elif idade >= 59:
-    percentual = 6.00 
+    percentual = 6.00 #600%
 else:
     print('Idade inválida.')
     percentual = 0
 
-
+#Abaixo ele vai calcular o valor mensal com base no percentual e depois vai exibir o valor formatado com duas casa decimais (.2f)
 valor_mensal = valor_base * percentual
 print(f'O valor mensal do plano é: R$ {valor_mensal:.2f}')

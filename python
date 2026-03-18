@@ -40,3 +40,25 @@ materia = 'Python'
 s1 = 'Pontuação: %d materia: %s' %(pontos, materia)
 print(s1)
 #---------------------------------
+mensagem_inicial = 'Bem-vindo(a) ao sistema de planos de saúde, Isabelle Silva!'
+print(mensagem_inicial)
+valor_base = float(input('Digite o valor base do plano: '))
+idade = int(input('Digite a idade do cliente: '))
+if idade >= 0 and idade < 19:
+    percentual = 1.0  # 100%
+elif idade >= 19 and idade < 29:
+    percentual = 1.5  # 150%
+elif idade >= 29 and idade < 39:
+    percentual = 2.25  # 225%
+elif idade >= 39 and idade < 49:
+    percentual = 2.40  # 240%
+elif idade >= 49 and idade < 59:
+    percentual = 3.50  # 350%
+elif idade >= 59:
+    percentual = 6.00  # 600%
+else:
+    print("Idade inválida.")
+    percentual = 0
+valorMensal = valor_base * percentual
+print(f"O valor mensal do plano é: R$ {valor_base:.2f}")
+

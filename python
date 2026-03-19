@@ -41,6 +41,10 @@ s1 = 'Pontuação: %d materia: %s' %(pontos, materia)
 print(s1)
 #---------------------------------
 
+
+
+
+
 s1 = 'Bem-vindo(a) ao sistema de planos de saúde da Isabelle Silva!' #Aqui é as boas vindas do programa
 print(s1)
 
@@ -67,7 +71,11 @@ else:
 valor_mensal = valor_base * percentual
 print(f'O plano mensal é de: R$ {valor_mensal:.2f}')
 
+
+
 #---------------------------------
+
+
 
 #Mensagem de boas-vindas + menu
 print('Bem-vinda à Pizzaria da Isabelle Silva!')
@@ -121,3 +129,76 @@ while True:
 
 #Resultado final
 print(f'Valor total do pedido: R$ {total:.2f}')
+
+
+
+#---------------------------------
+
+
+#Mensagem de boas vindas
+print("Bem-vindo(a) ao sistema de madeireira da Isabelle Silva!")
+
+#Função para escolher o tipo de madeira
+def escolha_tipo():
+    while True:
+        tipo = input('Digite o tipo de madeira (PIN/PER/MOG/IPE/IMB): ').upper()
+        
+        if tipo == "PIN":
+            return 150.40
+        elif tipo == "PER":
+            return 170.20
+        elif tipo == "MOG":
+            return 190.90
+        elif tipo == "IPE":
+            return 210.10
+        elif tipo == "IMB":
+            return 220.70
+        else:
+            print("Tipo inválido. Tente novamente.")
+
+#Função para calcular a quantidade de toras + o seu desconto
+def qtd_toras():
+    while True:
+        try:
+            qtd = float(input("Digite a quantidade de toras: "))
+
+            if qtd > 2000:
+                print("Quantidade não permitida. Máximo 2000.")
+                continue
+            #cálculo do desconto
+            if qtd < 100:
+                desconto = 0
+            elif qtd >= 100 and qtd < 500:
+                desconto = 0.04
+            elif qtd >= 500 and qtd < 1000:
+                desconto = 0.09
+            elif qtd >= 1000 and qtd <= 2000:
+                desconto = 0.16
+
+            return qtd, desconto
+
+        except:
+            print("Valor inválido. Digite um número.")
+
+#Função para escolher o tipo de transporte
+def transporte():
+    while True:
+        opcao = input("Escolha o transporte (1-Rodoviário / 2-Ferroviário / 3-Hidroviário): ")
+
+        if opcao == "1":
+            return 1000
+        elif opcao == "2":
+            return 2000
+        elif opcao == "3":
+            return 2500
+        else:
+            print("Opção inválida. Tente novamente.")
+            
+#Programa principal
+tipo_valor = escolha_tipo()
+qtd, desconto = qtd_toras()
+valor_transporte = transporte()
+#Cálculo total
+total = ((tipo_valor * qtd) * (1 - desconto)) + valor_transporte
+#Resultado final
+print(f"Total a pagar: R$ {total:.2f}")

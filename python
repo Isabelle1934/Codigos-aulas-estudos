@@ -1,23 +1,37 @@
-#Examples:
+#Class Examples and Basic commands:
 
 s1 = 'Lógica de Programação'
 s1 = s1 + ' e Algoritmos'
 print(s1)
+
 #---------------------------------
-s1 = 'A' + '-' * 10 + 'B'
+
+s1 = 'A' + ('-' * 10) + 'B'
 print(s1)
+
 #---------------------------------
-linguagens= ' Python ' + ('-' *5) + ' C ' + ('-' *5) + ' Java ' + ('-' *5) + ' PHP'
+
+linguagens = ' Python ' + ('-' * 5) + ' C ' + ('-' * 5) + ' Java ' + ('-' * 5) + ' PHP'
 print(linguagens)
+
 #---------------------------------
+
 nota = 8.5
 s1 = 'Você tirou %.1f na disciplina de Algoritmos' % nota
 print(s1)
+#A %.1f e % nota serve para retornar o valor da variável, nesse caso, nota ao texto
+
 #---------------------------------
+
 nota = 8.5
 disciplina = 'Algoritmos'
-s1 = 'Você tirou %d na disciplina de %s' % (nota, disciplina)
+s1 = 'Você tirou %d na disciplina de %s' % (nota, disciplina) #%d, %s e % com () servem para retornar 
 print(s1)
+
+#float(ponto flutuante) são usados para adicionar valores decimais
+#%
+
+
 #---------------------------------
 nome = 'Isa'
 idade = 20

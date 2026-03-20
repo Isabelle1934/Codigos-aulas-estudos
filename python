@@ -56,14 +56,20 @@ s1 = 'JS ' + (4 * '-') + ' C++ ' + (4 * '-') + ' Ruby ' + (4 * '-')
 print(s1)
 
 #---------------------------------
+
 altura = 1.75
 mensagem = 'Minha altura é %.1f' %(altura)
 print(mensagem)
+
+#A %.1f %(altura) está indicando a adição de uma variável (altura) que contém um valor decimal (float) de uma casa. Nesse caso o algoritmo vai arredondar o "1.75" em 1.8
+
 #---------------------------------
+
 pontos = 95.5
 materia = 'Python'
 s1 = 'Pontuação: %d materia: %s' %(pontos, materia)
 print(s1)
+
 #---------------------------------
 
 

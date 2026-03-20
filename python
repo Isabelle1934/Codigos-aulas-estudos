@@ -209,5 +209,7 @@ valor_transporte = transporte()
 #Cálculo total
 total = ((tipo_valor * qtd) * (1 - desconto)) + valor_transporte
 
+#---------------------------------
+
 #Resultado final
 print(f"Total a pagar: R$ {total:.2f}")

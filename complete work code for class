@@ -158,9 +158,11 @@ valor_transporte = transporte()
 
 #Cálculo total e o seu resultado.
 total = ((tipo_valor * qtd) * (1 - desconto)) + valor_transporte
+print(f"Valor total: R$ {total:.2f}")
 
 #---------------------------------
 
+Question 04.
 
 
 #Mensagem inicial do programa

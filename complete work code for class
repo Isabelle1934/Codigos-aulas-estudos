@@ -171,7 +171,7 @@ print(s1)
 #Lista que vai guardar os contatos
 lista_contatos = []
 #Coloque aqui o seu RU
-id_global = 5210122
+id_global = 124235
 
 #Função para cadastrar um contato
 def cadastrar_contato(id):

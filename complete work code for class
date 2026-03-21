@@ -1,0 +1,269 @@
+#Question 01.
+
+s1 = 'Bem-vindo(a) ao sistema de planos de saúde da Isabelle Silva!' #Aqui é as boas vindas do programa
+print(s1)
+
+valor_base = float(input("Informe o valor base do plano: ")) #Ele solicita o valor base e converte para o número decimal
+idade = int(input("Informe a idade do cliente: ")) #Já aqui solicita a idade do cliente e converte para número inteiro
+
+if idade >= 0 and idade < 19:
+    percentual = 1.0 #aqui dá 100% e por ai vai...
+elif idade >= 19 and idade < 29:
+    percentual = 1.5 #150%
+elif idade >= 29 and idade < 39:
+    percentual = 2.25 #225%
+elif idade >= 39 and idade < 49:
+    percentual = 2.40 #240%
+elif idade >= 49 and idade < 59:
+    percentual = 3.50 #350%
+elif idade >= 59:
+    percentual = 6.00 #600%
+else:
+    print('Idade inválida.')
+    percentual = 0
+
+#Abaixo ele vai calcular o valor mensal com base no percentual e depois vai exibir o valor com duas casa decimais (.2f)
+valor_mensal = valor_base * percentual
+print(f'O plano mensal é de: R$ {valor_mensal:.2f}')
+
+#---------------------------------
+
+#Question 02.
+
+#Mensagem de boas-vindas + menu
+print('Bem-vinda à Pizzaria da Isabelle Silva!')
+print('----------- CARDÁPIO -----------')
+print('Tamanho P - Pizza Salgada (PS) = R$30 | Pizza Doce (PD) = R$34')
+print('Tamanho M - Pizza Salgada (PS) = R$45 | Pizza Doce (PD) = R$48')
+print('Tamanho G - Pizza Salgada (PS) = R$60 | Pizza Doce (PD) = R$66')
+print('--------------------------------')
+
+#Acumulador do total
+total = 0
+
+#Estrutura de repetição
+while True:
+
+    #Entrada com o sabor da pizza
+    sabor = input("Digite o sabor (PS/PD): ").upper()
+
+    if sabor != "PS" and sabor != "PD":
+        print("Sabor inválido. Tente novamente")
+        continue  #Aqui ele retorna para o início do loop
+
+    #Aqui coloca o tamanho
+    tamanho = input("Digite o tamanho (P/M/G): ").upper()
+
+    if tamanho != "P" and tamanho != "M" and tamanho != "G":
+        print("Tamanho inválido. Tente novamente")
+        continue  #Volta para o início
+    if sabor == "PS":
+        if tamanho == "P":
+            preco = 30
+        elif tamanho == "M":
+            preco = 45
+        elif tamanho == "G":
+            preco = 60
+    elif sabor == "PD":
+        if tamanho == "P":
+            preco = 34
+        elif tamanho == "M":
+            preco = 48
+        elif tamanho == "G":
+            preco = 66
+
+    #Soma no acumulador
+    total += preco
+    print(f"Pedido adicionado: R$ {preco:.2f}")
+    continuar = input("Deseja pedir mais alguma coisa? (S/N): ").upper()
+
+    if continuar == "N":
+        break  #Encerra o loop
+
+#Resultado final
+print(f'Valor total do pedido: R$ {total:.2f}')
+
+
+
+#---------------------------------
+
+
+
+# Mensagem de boas vindas
+print('Bem-vindo(a) ao sistema de madeireira da Isabelle Silva!')
+print('----------- Entre com o tipo de madeira desejado -----------')
+print('PIN - Tora de Pinho')
+print('PER - Tora de Peroba')
+print('MOG - Tora de Mogno')
+print('IPE - Tora de Ipê')
+print('IMB - Tora de Imbuia')
+print('------------------------------------------------------------')
+
+#Função para escolher o tipo de madeira
+def escolha_tipo():
+    while True:
+        tipo = input('Digite o tipo de madeira (PIN/PER/MOG/IPE/IMB): ').upper()
+        
+        if tipo == "PIN":
+            return 150.40
+        elif tipo == "PER":
+            return 170.20
+        elif tipo == "MOG":
+            return 190.90
+        elif tipo == "IPE":
+            return 210.10
+        elif tipo == "IMB":
+            return 220.70
+        else:
+            print("Tipo inválido. Tente novamente.")
+
+#Função para calcular a quantidade de toras + o seu desconto
+def qtd_toras():
+    while True:
+        try:
+            qtd = float(input("Digite a quantidade de toras: "))
+
+            if qtd > 2000:
+                print("Quantidade não permitida. Máximo 2000.")
+                continue
+
+            #Aqui é o cálculo do desconto
+            if qtd < 100:
+                desconto = 0
+            elif qtd < 500:
+                desconto = 0.04
+            elif qtd < 1000:
+                desconto = 0.09
+            else:  # até 2000
+                desconto = 0.16
+
+            return qtd, desconto
+
+        except ValueError:
+            print("Valor inválido. Digite um número.")
+
+#Função para escolher o tipo de transporte
+def transporte():
+    while True:
+        opcao = input("Escolha o transporte (1-Rodoviário / 2-Ferroviário / 3-Hidroviário): ")
+        if opcao == "1":
+            return 1000
+        elif opcao == "2":
+            return 2000
+        elif opcao == "3":
+            return 2500
+        else:
+            print("Opção inválida. Tente novamente.")
+
+tipo_valor = escolha_tipo()
+qtd, desconto = qtd_toras()
+valor_transporte = transporte()
+
+#Cálculo total
+total = ((tipo_valor * qtd) * (1 - desconto)) + valor_transporte
+
+#Resultado final
+
+
+
+#---------------------------------
+
+
+
+#Mensagem inicial do programa
+s1 = ("Bem-vindo(a) ao sistema de contatos comerciais, Isabelle Silva!")
+print(s1)
+
+#Lista que vai guardar os contatos
+lista_contatos = []
+#Coloque aqui o seu RU
+id_global = 5210122
+
+#Função para cadastrar contato
+def cadastrar_contato(id):
+    print("\n--- Cadastro de Contato ---")
+    nome = input("Nome: ")
+    atividade = input("Atividade: ")
+    telefone = input("Telefone: ")
+    contato = {
+        "id": id,
+        "nome": nome,
+        "atividade": atividade,
+        "telefone": telefone
+    }
+    
+    #Adicionar contato na lista
+    lista_contatos.append(contato.copy())
+    print("Contato cadastrado!\n")
+
+
+#Aqui é as função para consultar os contatos
+def consultar_contatos():
+    while True:
+        print("\n--- Consultar Contatos ---")
+        print("1 - Ver todos")
+        print("2 - Buscar por id")
+        print("3 - Buscar por atividade")
+        print("4 - Voltar")
+        
+        opcao = input("Escolha: ")
+        if opcao == "1":
+            for c in lista_contatos:
+              print(c) 
+        elif opcao == "2":
+            try:
+                busca = int(input("Digite o id: "))
+                for c in lista_contatos:
+                    if c["id"] == busca:
+                      print(c)     
+            except:
+              print("Id inválido")
+        elif opcao == "3":
+            atividade = input("Digite a atividade: ")
+            
+            for c in lista_contatos:
+                if c["atividade"] == atividade:
+                  print(c)
+        elif opcao == "4":
+          return
+        else:
+          print("Opção inválida")
+
+#Função para remover um contato da lista
+def remover_contato():
+    while True:
+        try:
+            busca = int(input("Digite o id para remover: "))
+            
+            for c in lista_contatos:
+                if c["id"] == busca:
+                    lista_contatos.remove(c)
+                    print("Removido com sucesso!")
+                    return
+            
+            print("Id não encontrado")
+        
+        except:
+            print("Digite um número válido")
+
+#Menu principal
+while True:
+    print("--- MENU ---")
+    print("1 - Cadastrar")
+    print("2 - Consultar")
+    print("3 - Remover")
+    print("4 - Sair")
+
+    opcao = input("Escolha: ")
+    if opcao == "1":
+      cadastrar_contato(id_global)
+      id_global += 1
+    elif opcao == "2":
+      consultar_contatos()
+    elif opcao == "3":
+      remover_contato()
+    elif opcao == "4":
+      print("Saindo...")
+      break
+    else:
+      print("Opção inválida")

@@ -32,7 +32,7 @@ print(f'O plano mensal é de: R$ {valor_mensal:.2f}')
 
 #Question 02.
 
-#Mensagem de boas-vindas + menu
+#Mensagem de boas-vindas mais uma mensagem dizendo as opções do menu.
 print('Bem-vinda à Pizzaria da Isabelle Silva!')
 print('----------- CARDÁPIO -----------')
 print('Tamanho P - Pizza Salgada (PS) = R$30 | Pizza Doce (PD) = R$34')
@@ -40,25 +40,23 @@ print('Tamanho M - Pizza Salgada (PS) = R$45 | Pizza Doce (PD) = R$48')
 print('Tamanho G - Pizza Salgada (PS) = R$60 | Pizza Doce (PD) = R$66')
 print('--------------------------------')
 
-#Acumulador do total
+#Aqui é uma variável que vai guardar um valor, nesse caso vai guardar o total dos pedidos feito pelo cliente.
 total = 0
 
-#Estrutura de repetição
+#O 'While' é usado como uma estrutura de repetição, nesse caso, enquanto for verdadeiro ele vai rodar as condições abaixo. Entrada pedindo para o cliente o sabor da pizza. O 'upper' funciona para deixar a resposta posta(input) pelo usuário em maiúsculo(.upper). '!=' é um comparador, ou seja, se os valores forem iguais ele vai trazer a mensagem do print abaixo.
 while True:
-
-    #Entrada com o sabor da pizza
     sabor = input("Digite o sabor (PS/PD): ").upper()
-
     if sabor != "PS" and sabor != "PD":
         print("Sabor inválido. Tente novamente")
-        continue  #Aqui ele retorna para o início do loop
+        continue
 
-    #Aqui coloca o tamanho
+#Aqui coloca o tamanho da pizza com letra maiúscula(.upper)
     tamanho = input("Digite o tamanho (P/M/G): ").upper()
 
+#Aqui vai acontecer a mesma coisa que aconteceu quando foi pedido o sabor da pizza.
     if tamanho != "P" and tamanho != "M" and tamanho != "G":
         print("Tamanho inválido. Tente novamente")
-        continue  #Volta para o início
+        continue 
     if sabor == "PS":
         if tamanho == "P":
             preco = 30
@@ -74,18 +72,16 @@ while True:
         elif tamanho == "G":
             preco = 66
 
-    #Soma no acumulador
+    #Aqui é a soma dos valores que foram guardados na nossa variável + o preço do produto adicionado.
     total += preco
     print(f"Pedido adicionado: R$ {preco:.2f}")
     continuar = input("Deseja pedir mais alguma coisa? (S/N): ").upper()
 
     if continuar == "N":
-        break  #Encerra o loop
+        break  #Encerra o loop e termina o pedido.
 
-#Resultado final
+#Resultado final do pedido do usuário.
 print(f'Valor total do pedido: R$ {total:.2f}')
-
-
 
 #---------------------------------
 

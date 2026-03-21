@@ -164,7 +164,6 @@ print(f"Valor total: R$ {total:.2f}")
 
 Question 04.
 
-
 #Mensagem inicial do programa
 s1 = ("Bem-vindo(a) ao sistema de contatos comerciais, Isabelle Silva!")
 print(s1)
@@ -174,7 +173,7 @@ lista_contatos = []
 #Coloque aqui o seu RU
 id_global = 5210122
 
-#Função para cadastrar contato
+#Função para cadastrar um contato
 def cadastrar_contato(id):
     print("\n--- Cadastro de Contato ---")
     nome = input("Nome: ")
@@ -232,9 +231,9 @@ def remover_contato():
             
             for c in lista_contatos:
                 if c["id"] == busca:
-                    lista_contatos.remove(c)
-                    print("Removido com sucesso!")
-                    return
+                  lista_contatos.remove(c)
+                  print("Removido com sucesso!")
+                  return
             
             print("Id não encontrado")
         

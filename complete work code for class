@@ -85,7 +85,7 @@ print(f'Valor total do pedido: R$ {total:.2f}')
 
 #---------------------------------
 
-
+Question 03.
 
 # Mensagem de boas vindas
 print('Bem-vindo(a) ao sistema de madeireira da Isabelle Silva!')
@@ -161,8 +161,6 @@ valor_transporte = transporte()
 total = ((tipo_valor * qtd) * (1 - desconto)) + valor_transporte
 
 #Resultado final
-
-
 
 #---------------------------------
 

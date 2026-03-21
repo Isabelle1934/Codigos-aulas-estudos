@@ -87,7 +87,7 @@ print(f'Valor total do pedido: R$ {total:.2f}')
 
 Question 03.
 
-# Mensagem de boas vindas
+#Mensagem de boas vindas + apresentação do sistema da madeireira.
 print('Bem-vindo(a) ao sistema de madeireira da Isabelle Silva!')
 print('----------- Entre com o tipo de madeira desejado -----------')
 print('PIN - Tora de Pinho')
@@ -97,11 +97,10 @@ print('IPE - Tora de Ipê')
 print('IMB - Tora de Imbuia')
 print('------------------------------------------------------------')
 
-#Função para escolher o tipo de madeira
+#"def escolha_tipo():" é usado para guardar tudo que estiver dentro dessa função, ela só vai retornar quando eu chamar ela. Nesse caso o tipo da madeira. Os 'if, elif e else' já foram explicados em questões anteriores, mas elas basicamente são usadas assim: 'if' se usa caso a condição for verdadeira, 'elif' podemos usar diversas vezes, ela funciona caso o 'if' seja falso. O else(senão) só vai ser executado caso as outras opções não forem chamadas/executadas.
 def escolha_tipo():
     while True:
         tipo = input('Digite o tipo de madeira (PIN/PER/MOG/IPE/IMB): ').upper()
-        
         if tipo == "PIN":
             return 150.40
         elif tipo == "PER":
@@ -157,10 +156,8 @@ tipo_valor = escolha_tipo()
 qtd, desconto = qtd_toras()
 valor_transporte = transporte()
 
-#Cálculo total
+#Cálculo total e o seu resultado.
 total = ((tipo_valor * qtd) * (1 - desconto)) + valor_transporte
-
-#Resultado final
 
 #---------------------------------
 
